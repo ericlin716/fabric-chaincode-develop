@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ./network.sh gencert
 ./network.sh down
 ./network.sh up

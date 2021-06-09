@@ -16,8 +16,13 @@ func (s *SmartContract) Init(ctx contractapi.TransactionContextInterface) error 
 	return nil
 }
 
-func (s *SmartContract) Function1(ctx contractapi.TransactionContextInterface) error {
-	log.Printf("Into Function1")
+func (s *SmartContract) QueryFunction1(ctx contractapi.TransactionContextInterface) string {
+	log.Printf("Into QueryFunction1")
+	return "hello world"
+}
+
+func (s *SmartContract) InvokeFunction1(ctx contractapi.TransactionContextInterface) error {
+	log.Printf("Into InvokeFunction1")
 	return nil
 }
 
