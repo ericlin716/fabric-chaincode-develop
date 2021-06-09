@@ -1,3 +1,0 @@
-[submodule "chaincode"]
-	path = chaincode
-	url = ../chaincode.git
