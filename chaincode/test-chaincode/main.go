@@ -39,6 +39,4 @@ func main() {
 		log.Printf("Error starting chaincode: %s", err.Error())
 		return
 	}
-
-	return
 }

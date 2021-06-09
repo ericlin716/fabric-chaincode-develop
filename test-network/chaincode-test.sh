@@ -17,7 +17,7 @@ while [[ $# -ge 1 ]] ; do
   key="$1"
   case $key in
   1 ) # Query
-    peer chaincode query -C mychannel -n car-insurance -c '{"function":"QueryFunction1","Args":[]}'
+    peer chaincode query -C mychannel -n $CHAINCODE_NAME -c '{"function":"QueryFunction1","Args":[]}'
     shift
     ;;
   2 ) # Invoke
