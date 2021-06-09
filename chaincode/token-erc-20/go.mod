@@ -1,6 +1,6 @@
 module token-erc-20
 
-go 1.14
+go 1.15
 
 require (
 	github.com/hyperledger/fabric-contract-api-go v1.1.0
