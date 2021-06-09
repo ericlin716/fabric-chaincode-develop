@@ -1,4 +1,4 @@
-# fabric-network-develop
+# fabric-chaincode-develop
 
 The metadata has already created in this repository.
 
