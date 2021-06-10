@@ -13,7 +13,7 @@ CHANNEL_NAME="mychannel"
 # use golang as the default language for chaincode
 CC_SRC_LANGUAGE=golang
 # Chaincode name
-CHAINCODE_NAME='test-chaincode'
+CHAINCODE_NAME='token-erc-20'
 
 while [ -z "$VERSION" ]; do
     read -p "Input chaincode version: " VERSION
