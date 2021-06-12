@@ -7,13 +7,13 @@ package main
 import (
 	"log"
 
-	"token-erc-20/chaincode"
+	"token-erc-20/smartcontract"
 
 	"github.com/hyperledger/fabric-contract-api-go/contractapi"
 )
 
 func main() {
-	tokenChaincode, err := contractapi.NewChaincode(&chaincode.SmartContract{})
+	tokenChaincode, err := contractapi.NewChaincode(&smartcontract.SmartContract{})
 	if err != nil {
 		log.Panicf("Error creating token-erc-20 chaincode: %v", err)
 	}
