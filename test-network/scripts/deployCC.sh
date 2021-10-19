@@ -15,7 +15,7 @@ VERBOSE="$7"
 : ${VERBOSE:="false"}
 CC_SRC_LANGUAGE=`echo "$CC_SRC_LANGUAGE" | tr [:upper:] [:lower:]`
 
-FABRIC_CFG_PATH=$PWD/../config/
+FABRIC_CFG_PATH=$PWD/configtx/
 
 if [ "$CC_SRC_LANGUAGE" = "go" -o "$CC_SRC_LANGUAGE" = "golang" ] ; then
 	CC_RUNTIME_LANGUAGE=golang
@@ -250,6 +250,6 @@ commitChaincodeDefinition 1
 queryCommitted 1
 
 ## Invoke the chaincode
-chaincodeInvokeInit 1
+# chaincodeInvokeInit 1
 
 exit 0

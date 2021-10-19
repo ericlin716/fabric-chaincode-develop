@@ -2,7 +2,7 @@
 
 export OS_ARCH=$(echo "$(uname -s | tr '[:upper:]' '[:lower:]' | sed 's/mingw64_nt.*/windows/')-$(uname -m | sed 's/x86_64/amd64/g')" | awk '{print tolower($0)}')
 export PATH=${PWD}/../bin/${OS_ARCH}:$PATH
-export FABRIC_CFG_PATH=$PWD/../config/
+export FABRIC_CFG_PATH=$PWD/configtx/
 
 export CORE_PEER_TLS_ENABLED=false
 export CORE_PEER_LOCALMSPID="Org1MSP"
@@ -16,6 +16,10 @@ ComplexInputTemplate="{\"key\":\"key\",\"value\":1,\"message\":\"test complex ob
 while [[ $# -ge 1 ]] ; do
   key="$1"
   case $key in
+  init ) # init
+    peer chaincode invoke -o localhost:7050 -C mychannel -n $CHAINCODE_NAME --peerAddresses localhost:7051 --isInit -c '{"function":"Init","Args":[]}'
+    shift
+    ;;
   1 ) # Query
     peer chaincode query -C mychannel -n $CHAINCODE_NAME -c '{"function":"QueryFunction1","Args":[]}'
     shift
@@ -24,10 +28,6 @@ while [[ $# -ge 1 ]] ; do
     peer chaincode invoke -o localhost:7050 -C mychannel -n $CHAINCODE_NAME --peerAddresses localhost:7051 -c '{"function":"InvokeFunction1","Args":[]}'
     shift
     ;;
-  init ) # init
-    peer chaincode invoke -o localhost:7050 -C mychannel -n $CHAINCODE_NAME --peerAddresses localhost:7051 --isInit -c '{"function":"Init","Args":[]}'
-    shift
-  ;;
   * )
     echo
     echo "Unknown flag: $key"
