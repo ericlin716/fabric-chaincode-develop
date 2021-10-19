@@ -32,7 +32,7 @@
 	// "remoteUser": "vscode"
 
 	"runArgs": [
-		"--init", "--privileged","--name", "miller-dev-container", 
+		"--init", "--privileged","--name", "bc-dev-container", 
 	],
 	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
 	"overrideCommand": false
