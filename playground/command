@@ -1,0 +1,10 @@
+export PATH=${PWD}/../bin/linux-amd64:$PATH
+
+#產生orderer憑證
+cryptogen generate --config=./config/crypto-config-orderer.yaml --output=./crypto-config
+
+#產生peer憑證
+cryptogen generate --config=./config/crypto-config-org1.yaml --output=./crypto-config
+
+#產生創世區塊
+configtxgen -configPath ./config -profile OrderersGenesis -channelID system-channel -outputBlock ./system-genesis-block/genesis.block
