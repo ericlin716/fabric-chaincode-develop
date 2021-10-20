@@ -42,7 +42,7 @@ Organizations:
                 Rule: "OR('OrdererMSP.admin')"
 
         OrdererEndpoints:
-            - orderer.cathaybc.com:7050
+            - orderer1.cathaybc.com:7050
 
     - &Org1
         # DefaultOrg defines the organization which is used in the sampleconfig
@@ -186,7 +186,7 @@ Orderer: &OrdererDefaults
 
     EtcdRaft:
         Consenters:
-        - Host: orderer.cathaybc.com
+        - Host: orderer1.cathaybc.com
           Port: 7050
           ClientTLSCert: ../crypto-config/ordererOrganizations/cathaybc.com/orderers/orderer1.cathaybc.com/tls/server.crt
           ServerTLSCert: ../crypto-config/ordererOrganizations/cathaybc.com/orderers/orderer1.cathaybc.com/tls/server.crt
