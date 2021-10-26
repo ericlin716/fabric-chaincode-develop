@@ -34,6 +34,6 @@
 	"runArgs": [
 		"--init", "--privileged","--name", "bc-dev-container", 
 	],
-	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
+	"mounts": ["source=fabric-dind-var-lib-docker,target=/var/lib/docker,type=volume"],
 	"overrideCommand": false
 }

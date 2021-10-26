@@ -50,6 +50,7 @@ PeerOrgs:
       Count: 1
       SANS:
         - localhost
+      Start: 1
       # Start: 5
       # Hostname: {{.Prefix}}{{.Index}} # default
     # ---------------------------------------------------------------------------
