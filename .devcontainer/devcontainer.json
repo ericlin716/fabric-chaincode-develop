@@ -32,8 +32,8 @@
 	// "remoteUser": "vscode"
 
 	"runArgs": [
-		"--init", "--privileged","--name", "bc-dev-container", 
+		"--init", "--privileged","--name", "${localWorkspaceFolderBasename}-dev-container", "-v", "${env:HOME}${env:USERPROFILE}/.ssh:/root/.ssh:ro"
 	],
-	"mounts": ["source=fabric-dind-var-lib-docker,target=/var/lib/docker,type=volume"],
+	"mounts": ["source=${localWorkspaceFolderBasename}-dind-var-lib-docker,target=/var/lib/docker,type=volume"],
 	"overrideCommand": false
 }
